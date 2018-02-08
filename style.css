@@ -9,9 +9,6 @@ html, body {
 body, .main, nav, .social, .hero, .job, .contact {
     display: flex;
 }
-body * {
-    border: 1px solid black;
-}
 .highlight {
     background-color: black;
     color: white;
