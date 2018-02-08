@@ -5,52 +5,50 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-            rel="stylesheet" 
-            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
-            crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/css/uikit.min.css" />
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
         <nav>
-            <div id="logo">Logo</div>
-            <div class="links">
-                <div class="link-container">
-                    <span>
-                        About
-                    </span>
-                </div>
-                <div class="link-container">
-                    <span>
-                        Blog
-                    </span>
-                </div>
-                <div class="link-container">
-                    <span>
-                        Portfolio
-                    </span>
-                </div>
-                <div class="link-container">
-                    <span>
-                        Contact
-                    </span>
-                </div>
-            </div>
-            <div class="social">
-                <div class="social-link">1</div>
-                <div class="social-link">2</div>
-                <div class="social-link">3</div>
-                <div class="social-link">4</div>
-                <div class="social-link">5</div>
-            </div>
-            <button class="burger">
-                <span class="bar1"></span>
-                <span class="bar2"></span>
-                <span class="bar3"></span>
-            </button>
+            <div class="logo"></div>
+            Roggmatz
         </nav>
-        <section class="content">
-            Content Here
-        </section>
-    </body>
+        <div class="main">
+            <section class="social">
+                <object class="socialLogo" type="image/svg+xml" data="svg/twitter.svg"></object>
+                <object class="socialLogo" type="image/svg+xml" data="svg/instagram.svg"></object>
+                <object class="socialLogo" type="image/svg+xml" data="svg/soundcloud.svg"></object>
+                <object class="socialLogo" type="image/svg+xml" data="svg/linkedin.svg"></object>
+                <object class="socialLogo" type="image/svg+xml" data="svg/github.svg"></object>
+            </section>
+            <section class="hero">
+                <div class="wrapper">
+                    <span>
+                        Hello, I am
+                    </span>
+                    <h1>
+                        Rogger Matamoros
+                    </h1>
+                    <span class="title">
+                        a 
+                        <span class="inverse">
+                            software engineer
+                        </span> 
+                    </span>
+                </div>
+            </section>
+            <section class="job">
+                <div class="wrapper">
+                    Currently a <span class="highlight">This</span> doing test, front-end, middleware, and database design & development for <span class="highlight">There</span>.
+                </div>
+            </section>
+            <section class="contact">
+                <div class="wrapper">
+                    <p>Wanna collaborate and talk about things and such?</p>
+                    <button type="button" class="uk-button uk-button-default">Say Hi</button>
+                </div>  
+            </section>
+        </div>
+    </body> 
+    <script src="script.js"></script>
 </html>

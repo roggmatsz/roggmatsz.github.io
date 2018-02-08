@@ -6,186 +6,112 @@ html, body {
     height: 100%;
     font-family: sans-serif;
 }
-@keyframes revealDownward {
-    0% {
-        display: none;
-        transform: translateY(-100px);
-    }
-    100% {
-        display: initial;
-        transform: translateY(0);
-    }
-}
-body, nav {
+body, .main, nav, .social, .hero, .job, .contact {
     display: flex;
 }
-nav, nav * {
+body * {
     border: 1px solid black;
 }
-.burger {
-    width: 24px;
-    height: 20px;
-    position: relative;
-    border: none;
-    background-color: white;
-}
-.burger > span {
-    display: block;
-    height: 1px;
+.highlight {
     background-color: black;
-    position: absolute;
-    width: 24px;
-} .burger > .bar1 {
-    top: 0;
-} .burger > .bar2 {
-    top: 50%;
-    transform: translate(0, -100%);
-} .burger > .bar3 {
-    bottom: 0;
-    transform: translate(0, -50%);
+    color: white;
+    padding: 6px 5px 0px 6px;;
 }
-.content {border: 1px solid black;}
-.clickable {
-    position: relative;
-}
-.clickable ul {
-    display: none;
-} .clickable:hover ul {
-    display: initial;
-    position: absolute;
-}
-@media screen and (max-width: 767px) {
-    body {
+@media screen {
+    body, .main {
         flex-direction: column;
     }
     nav {
+        order: 1;
+        flex-grow: 0;
         flex-direction: row;
-        height: 10%;
-        justify-content: space-between;
         align-items: center;
-        padding: 0 10px;
-    }
-    nav > .social {
-        display: none;
-    }
-    nav > .links {
-        position: absolute;
-        display: flex;
-        top: 10%;
-        right: 0;
-        bottom: 0;
-        width: 50%;
-        flex-direction: column;
-        z-index: 5;
-        font-size: 2.5rem;
-    }
-    nav > .links > .link-container {
-        padding: 15px 20px;
-    }
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    body {
-        flex-direction: column;
-    }
-    nav {
-        flex-direction: row;
-        justify-content: space-between;
-        height: 48px;
-    }
-    nav > .social {
-        display: none;
-    }
-    #logo {
-        margin-left: 10px;
-        width: 30px;
-        height: 100%;
-    }
-    .links {
-        display: flex;
-        flex-direction: row;
-        height: 100%;
-        align-items: center;
-        border: none;
-        font-size: 2rem;
-    }
-    .link-container {
-        margin-right: 30px;
-        border: none;
-    } .link-container:last-child {
-        margin-right: 10px;
-    } .link-container > span {
         padding: 10px;
+        font-size: 24px;
+        border-bottom: 1px solid black;
+        background-color: #eee;
     }
-}
-@media screen and (min-width: 992px) {
-    body {
-        flex-direction: row;
+    nav > .logo {
+        height: 38px;
+        width: 38px;
+        background-color: gray;
+        margin-right: 10px;
     }
-    nav {
-        flex-basis: 20%;
-        flex-direction: column;
-        margin-right: 20px;
+    .main {
+        order: 2;
+        flex-grow: 1;
     }
-    #logo {
-        margin: 40px 0 80px 0;
-        height: 100px;
-        width: 100px;
-        align-self: right;
+    .main > * {
+        flex-grow: 1;
     }
-    .links {
-        margin-bottom: 40px;
-        border: none;
-    }
-    .link-container {
-        margin-bottom: 20px;
-        padding: 6px 5px;
-        display: flex;
+    section.hero, section.job, section.contact {
         flex-direction: row;
         justify-content: center;
-    } .link-container:last-child {
-        margin-bottom: 0;
+        align-items: center;
     }
-    .link-container > span {
-        display: block;
-<<<<<<< HEAD
-        font-size: 2.25rem;
-        width: 100px;
-        border: none;
-=======
-        width: 100px;
-        padding: 6px 5px;
-        font-size: 2.25rem;
->>>>>>> de784f48a8d828cca4dfebd5ad412acfdee256e9
+    section.social {
+        order: 4;
+        flex-grow: 0;
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px;
+        background-color: #aaa;
     }
-    .link-container > ul {
-        margin-bottom: 0;
-    } .link-container > ul > li {
-        font-size: 2.5rem;
-        padding: 5px 4px;
+    section.social > .socialLogo {
+        border-radius: 40px;
     }
-    .social {
+    .social > .socialLogo {
+        width: 27px;
+        height: 27px;
+        color: gray;
+        margin-right: 10px;
+        border: 1px solid black;
+        padding: 5px;
+    }
+    section.hero {
+        order: 1;
+        padding-left: 10px;
+    }
+    section.hero > .wrapper > span {
+        font-size: 28px;
+    }
+    section.hero > .wrapper {
+        flex-grow: 0;
         display: flex;
-        direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        width: 120px;
-        align-self: center;
-        border: none;
+        flex-direction: column;
     }
-    .social > .social-link {
-        width: 50px;
-        height: 50px;
-        margin-right: 20px;
-        margin-bottom: 20px;
-    } .social > .social-link:nth-child(2n) {
-        margin-right: 0;
-    } .social > .social-link:last-child {
-        margin-right: 0;
+    section.hero > .wrapper > h1 {
+        font-size: 54px;
+        margin-top: 10px;
     }
-    .content {
-        flex-basis: 80%;
+    section.hero > .wrapper > .title {
+        font-size: 26px;
+        text-align: right;
+        margin-top: 10px;
     }
-}
-@media screen and (min-width: 1200px) {
-    
+    section.hero > .wrapper > .title > .inverse {
+        background-color: black;
+        color: white;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    section.job {
+        order: 2;
+        background-color: #ccc;
+    }
+    section.job > .wrapper {
+        width: 80%;
+        font-size: 1.5rem; 
+    }
+    section.contact {
+        order: 3;
+        background-color: #bbb;
+    }
+    section.contact > .wrapper {
+        width: 80%;
+        text-align: center;
+        font-size: 1.3rem;
+    }
 }
