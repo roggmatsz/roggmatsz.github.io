@@ -50,26 +50,27 @@ nav {
   align-items: center;
   padding: 40px;
   border: 1px solid black;
-}
- nav h1 {
-  display: block;
-  transform: rotate(270deg);
-  transform-origin: 100% 100%;
-}
-nav .social {
-  display: flex;
-  flex-direction: column;
-}
-nav .social img {
-  width: 36px;
-  height: 36px;
-  margin-bottom: 20px;
-} nav .social img:last-child {
-  margin-bottom: 0;
-}
-nav .logo {
-  width: 46px;
-  height: 46px;
-  border: 1px solid black;
+  h1 {
+    display: block;
+    transform: rotate(270deg);
+    transform-origin: 100% 100%;
+  }
+  .social {
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 20px;
+    }
+    img:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .logo {
+    width: 46px;
+    height: 46px;
+    border: 1px solid black;
+  }
 }
 </style>
