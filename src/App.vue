@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <div class="logo"></div>
+      <div class="social">
+        <img src="./assets/twitter-logo.svg" >
+        <img src="./assets/linkedin-logo.svg" />
+        <img src="./assets/github-logo.svg" />
+      </div>
     </nav>
     <section class="bio">
       Bio Goes Here
@@ -13,6 +17,10 @@
     </section>
   </div>
 </template>
+
+<script>
+export default { }
+</script>
 
 <style lang="scss">
 #app {
@@ -33,5 +41,35 @@
   .content {
     flex-grow: 2;
   }
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  border: 1px solid black;
+}
+ nav h1 {
+  display: block;
+  transform: rotate(270deg);
+  transform-origin: 100% 100%;
+}
+nav .social {
+  display: flex;
+  flex-direction: column;
+}
+nav .social img {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 20px;
+} nav .social img:last-child {
+  margin-bottom: 0;
+}
+nav .logo {
+  width: 46px;
+  height: 46px;
+  border: 1px solid black;
 }
 </style>
