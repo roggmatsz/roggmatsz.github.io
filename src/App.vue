@@ -3,9 +3,15 @@
     <nav>
       <img class="logo" src="./assets/logo.png" />
       <div class="social">
-        <img src="./assets/twitter-logo.svg" >
-        <img src="./assets/linkedin-logo.svg" />
-        <img src="./assets/github-logo.svg" />
+        <a href="https://twitter.com/roggmatz">
+          <img src="./assets/twitter-logo.svg" />
+        </a>
+        <a href="https://linkedin.com/in/roggmatz">
+          <img src="./assets/linkedin-logo.svg" />
+        </a>
+        <a href="https://github.com/roggmatsz">
+          <img src="./assets/github-logo.svg" />
+        </a>
       </div>
     </nav>
     <section class="bio">
@@ -48,11 +54,11 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 40px;
+  padding: 2.5rem;
   border: 1px solid black;
   img.logo {
-    width: 46px;
-    height: 46px;
+    width: 2.875rem;
+    height: 2.875rem;
   }
   h1 {
     display: block;
@@ -62,12 +68,14 @@ nav {
   .social {
     display: flex;
     flex-direction: column;
-    img {
-      width: 36px;
-      height: 36px;
-      margin-bottom: 20px;
+    a {
+      margin-bottom: 1.25rem;
     }
-    img:last-child {
+    img {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+    a:last-child {
       margin-bottom: 0;
     }
   }
