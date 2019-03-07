@@ -1,8 +1,18 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <img class="logo" src="./assets/logo.png" />
+      <div class="social">
+        <a href="https://twitter.com/roggmatz">
+          <img src="./assets/twitter-logo.svg" />
+        </a>
+        <a href="https://linkedin.com/in/roggmatz">
+          <img src="./assets/linkedin-logo.svg" />
+        </a>
+        <a href="https://github.com/roggmatsz">
+          <img src="./assets/github-logo.svg" />
+        </a>
+      </div>
     </nav>
     <section class="bio">
       Bio Goes Here
@@ -13,6 +23,10 @@
     </section>
   </div>
 </template>
+
+<script>
+export default { }
+</script>
 
 <style lang="scss">
 #app {
@@ -32,6 +46,38 @@
   }
   .content {
     flex-grow: 2;
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem;
+  border: 1px solid black;
+  img.logo {
+    width: 2.875rem;
+    height: 2.875rem;
+  }
+  h1 {
+    display: block;
+    transform: rotate(270deg);
+    transform-origin: 100% 100%;
+  }
+  .social {
+    display: flex;
+    flex-direction: column;
+    a {
+      margin-bottom: 1.25rem;
+    }
+    img {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+    a:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 </style>
