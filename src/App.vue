@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <div class="logo"></div>
+      <img class="logo" src="./assets/logo.png" />
       <div class="social">
         <img src="./assets/twitter-logo.svg" >
         <img src="./assets/linkedin-logo.svg" />
@@ -50,6 +50,10 @@ nav {
   align-items: center;
   padding: 40px;
   border: 1px solid black;
+  img.logo {
+    width: 46px;
+    height: 46px;
+  }
   h1 {
     display: block;
     transform: rotate(270deg);
@@ -66,11 +70,6 @@ nav {
     img:last-child {
       margin-bottom: 0;
     }
-  }
-  .logo {
-    width: 46px;
-    height: 46px;
-    border: 1px solid black;
   }
 }
 </style>
