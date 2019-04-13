@@ -2,6 +2,7 @@
   <div id="app">
     <nav>
       <img class="logo" src="./assets/logo.png" />
+      <h1 class="is-hidden-mobile">Rogger Matamoros</h1>
       <div class="social">
         <a href="https://twitter.com/roggmatz">
           <img src="./assets/twitter-logo.svg" />
@@ -60,11 +61,6 @@ nav {
     width: 2.875rem;
     height: 2.875rem;
   }
-  h1 {
-    display: block;
-    transform: rotate(270deg);
-    transform-origin: 100% 100%;
-  }
   .social {
     display: flex;
     flex-direction: column;
@@ -80,4 +76,23 @@ nav {
     }
   }
 }
+@media screen and (max-width: 60rem) {
+  #app {
+    flex-direction: column;
+    nav {
+      padding: 1.5rem;
+    }
+    nav, nav .social {
+      flex-direction: row;
+    }
+    nav .social a {
+      margin-right: 1.25rem;
+      margin-bottom: 0;
+    }
+    nav .social a:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
 </style>
