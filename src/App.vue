@@ -39,26 +39,23 @@ export default { }
   color: #2c3e50;
   display: flex;
   height: 100%;
-
-  nav {
-    flex-grow: 0;
-  }
-  .bio {
-    flex-grow: 1;
-    overflow-y: scroll;
-    border: 1px solid black;
-    border-top: none;
-    border-bottom: none;
-  }
-  .content {
-    flex-grow: 1;
-  }
-  .bio, .content {
-    padding: 2.5rem 1.25rem;
-  }
+}
+.bio {
+  flex-grow: 1;
+  overflow-y: scroll;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
+}
+.content {
+  flex-grow: 1;
+}
+.bio, .content {
+  padding: 2.5rem 1.25rem;
 }
 
 nav {
+  flex-grow: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -96,6 +93,7 @@ nav {
   nav {
     flex-direction: row;
     padding: 0;
+    border-bottom: 1px solid black;
     .social {
       flex-direction: row;
       a {
@@ -108,6 +106,9 @@ nav {
         }
       }
     }
+  }
+  .bio {
+    border: none;
   }
 }
 </style>
