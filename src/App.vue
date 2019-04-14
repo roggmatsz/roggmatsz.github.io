@@ -21,7 +21,6 @@
     </section>
     <section class="content">
       <router-view/>
-      Content Goes Here
     </section>
   </div>
 </template>
@@ -46,9 +45,16 @@ export default { }
   }
   .bio {
     flex-grow: 1;
+    overflow-y: scroll;
+    border: 1px solid black;
+    border-top: none;
+    border-bottom: none;
   }
   .content {
-    flex-grow: 2;
+    flex-grow: 1;
+  }
+  .bio, .content {
+    padding: 2.5rem 1.25rem;
   }
 }
 
@@ -58,7 +64,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 2.5rem;
-  border: 1px solid black;
   img.logo {
     width: 2.875rem;
     height: 2.875rem;
