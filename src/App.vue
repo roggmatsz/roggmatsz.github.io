@@ -107,7 +107,6 @@ nav {
       a {
         margin-bottom: 0;
         padding: 1.25rem;
-        border: 1px solid red;
         img {
           width: 2rem;
           height: 2rem;
