@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <nav>
-      <a href="/">
-        <img class="logo" src="./assets/logo.png" />
+      <a class="logo" href="/">
+        <img src="./assets/logo.png" />
       </a>
       <div class="social">
         <a href="https://twitter.com/roggmatz">
@@ -16,12 +16,14 @@
         </a>
       </div>
     </nav>
-    <section class="bio">
-      Bio Goes Here
-    </section>
-    <section class="content">
-      <router-view/>
-    </section>
+    <div class="wrapper">
+      <section class="bio">
+        Bio Goes Here
+      </section>
+      <section class="content">
+        <router-view/>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -61,7 +63,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 2.5rem;
-  img.logo {
+  a.logo img {
     width: 2.875rem;
     height: 2.875rem;
   }
@@ -94,11 +96,17 @@ nav {
     flex-direction: row;
     padding: 0;
     border-bottom: 1px solid black;
+    .logo {
+      height: 100%;
+      padding: 0 1.25rem;
+      display: flex;
+      align-items: center;
+    }
     .social {
       flex-direction: row;
       a {
         margin-bottom: 0;
-        padding: 1rem;
+        padding: 1.25rem;
         border: 1px solid red;
         img {
           width: 2rem;
@@ -109,6 +117,27 @@ nav {
   }
   .bio {
     border: none;
+  }
+}
+
+@include tablet-only {
+  .wrapper {
+    border: 1px solid cyan;
+    display: flex;
+    .bio {
+      border: 1px solid red;
+      flex-grow: 1;
+    }
+    .content {
+      flex-grow: 2;
+    }
+  }
+}
+
+@include desktop {
+  .wrapper {
+    flex-grow: 1;
+    display: flex;
   }
 }
 </style>
