@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <nav>
-      <img class="logo" src="./assets/logo.png" />
+      <a class="logo" href="/">
+        <img src="./assets/logo.png" />
+      </a>
       <div class="social">
         <a href="https://twitter.com/roggmatz">
           <img src="./assets/twitter-logo.svg" />
@@ -14,13 +16,14 @@
         </a>
       </div>
     </nav>
-    <section class="bio">
-      Bio Goes Here
-    </section>
-    <section class="content">
-      <router-view/>
-      Content Goes Here
-    </section>
+    <div class="wrapper">
+      <section class="bio">
+        Bio Goes Here
+      </section>
+      <section class="content">
+        <router-view/>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -29,6 +32,7 @@ export default { }
 </script>
 
 <style lang="scss">
+@import '../node_modules/bulma/sass/utilities/mixins.sass';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -37,26 +41,29 @@ export default { }
   color: #2c3e50;
   display: flex;
   height: 100%;
-
-  nav {
-    flex-grow: 0;
-  }
-  .bio {
-    flex-grow: 1;
-  }
-  .content {
-    flex-grow: 2;
-  }
+}
+.bio {
+  flex-grow: 1;
+  overflow-y: scroll;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
+}
+.content {
+  flex-grow: 1;
+}
+.bio, .content {
+  padding: 2.5rem 1.25rem;
 }
 
 nav {
+  flex-grow: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 2.5rem;
-  border: 1px solid black;
-  img.logo {
+  a.logo img {
     width: 2.875rem;
     height: 2.875rem;
   }
@@ -78,6 +85,58 @@ nav {
     a:last-child {
       margin-bottom: 0;
     }
+  }
+}
+
+@include touch {
+  #app {
+    flex-direction: column;
+  }
+  nav {
+    flex-direction: row;
+    padding: 0;
+    border-bottom: 1px solid black;
+    .logo {
+      height: 100%;
+      padding: 0 1.25rem;
+      display: flex;
+      align-items: center;
+    }
+    .social {
+      flex-direction: row;
+      a {
+        margin-bottom: 0;
+        padding: 1.25rem;
+        img {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+  .bio {
+    border: none;
+  }
+}
+
+@include tablet-only {
+  .wrapper {
+    border: 1px solid cyan;
+    display: flex;
+    .bio {
+      border: 1px solid red;
+      flex-grow: 1;
+    }
+    .content {
+      flex-grow: 2;
+    }
+  }
+}
+
+@include desktop {
+  .wrapper {
+    flex-grow: 1;
+    display: flex;
   }
 }
 </style>
