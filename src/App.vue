@@ -4,6 +4,7 @@
       <a class="logo" href="/">
         <img src="./assets/logo.png" />
       </a>
+      <h1 class="is-size-4 is-hidden-touch has-text-weight-bold">Rogger Matamoros</h1>
       <div class="social">
         <a href="https://twitter.com/roggmatz">
           <img src="./assets/twitter-logo.svg" />
@@ -67,11 +68,6 @@ nav {
     width: 2.875rem;
     height: 2.875rem;
   }
-  h1 {
-    display: block;
-    transform: rotate(270deg);
-    transform-origin: 100% 100%;
-  }
   .social {
     display: flex;
     flex-direction: column;
@@ -134,6 +130,16 @@ nav {
 }
 
 @include desktop {
+  nav {
+    position: relative;
+    h1 {
+      position: absolute;
+      top: 50%;
+      width: 180px;
+      display: block;
+      transform: rotate(270deg);
+    }
+  }
   .wrapper {
     flex-grow: 1;
     display: flex;
