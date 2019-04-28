@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- TODO: Refactor nav into its own component -->
     <nav>
       <a class="logo" href="/">
         <img src="./assets/logo.png" />
@@ -18,6 +19,7 @@
       </div>
     </nav>
     <div class="wrapper">
+      <!-- TODO: refactor both sections into own components -->
       <section class="bio">
         Bio Goes Here
       </section>
