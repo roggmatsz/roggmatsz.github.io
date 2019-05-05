@@ -5,7 +5,7 @@
       <a class="logo" href="/">
         <img src="./assets/logo.png" />
       </a>
-      <h1 class="is-size-4 is-hidden-touch has-text-weight-bold">Rogger Matamoros</h1>
+      <h1 class="is-size-4 is-hidden has-text-weight-bold">Rogger Matamoros</h1>
       <div class="social">
         <a href="https://twitter.com/roggmatz">
           <img src="./assets/twitter-logo.svg" />
