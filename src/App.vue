@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!-- TODO: Refactor nav into its own component -->
+    <dev-splashscreen v-on:engage-blur="onBlurEngaged"></dev-splashscreen>
     <nav>
       <a class="logo" href="/">
         <img src="./assets/logo.png" />
@@ -31,7 +32,16 @@
 </template>
 
 <script>
-export default { }
+import DevSplashscreen from './components/DevSplashscreen'
+export default {
+  components: {
+    DevSplashscreen
+  },
+  onBlurEngaged () {
+    console.info('event caught.')
+    document.getElementById('app').classList.add('make-blur')
+  }
+}
 </script>
 
 <style lang="scss">
@@ -44,6 +54,9 @@ export default { }
   color: #2c3e50;
   display: flex;
   height: 100%;
+}
+.make-blur {
+  filter: blur(5px);
 }
 .bio {
   flex-grow: 1;
