@@ -27,14 +27,19 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <Test sample="safsd" />
   </div>
 </template>
 
 <script>
+import Test from './test'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  components: {
+    Test
   }
 }
 </script>
