@@ -77,8 +77,8 @@ nav {
       margin-bottom: 1.25rem;
     }
     img {
-      width: 2.25rem;
-      height: 2.25rem;
+      width: 2rem;
+      height: 2rem;
     }
     a:last-child {
       margin-bottom: 0;
