@@ -124,9 +124,10 @@ nav {
     .bio {
       border: 1px solid red;
       flex-grow: 1;
+      flex-basis: 50%;
     }
     .content {
-      flex-grow: 2;
+      flex-grow: 1;
     }
   }
 }
