@@ -106,8 +106,8 @@ nav {
         margin-bottom: 0;
         padding: 1.25rem;
         img {
-          width: 2rem;
-          height: 2rem;
+          width: 1.8rem;
+          height: 1.8rem;
         }
       }
     }
