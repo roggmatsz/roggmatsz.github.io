@@ -21,8 +21,8 @@ export default { }
   flex-grow: 1;
 }
 .bio {
-  flex-grow: 1;
   overflow-y: scroll;
+  flex-grow: 1;
 }
 .content {
   flex-grow: 1;
@@ -30,13 +30,15 @@ export default { }
 .bio, .content {
   padding: 2.5rem 1.25rem;
 }
+@include mobile {
+  .bio {
+    border-bottom: 1px solid black;
+  }
+}
 
 @include touch {
   .base {
     flex-direction: column;
-  }
-  .bio {
-    border-right: 1px solid black;
   }
 }
 
@@ -46,9 +48,10 @@ export default { }
   }
   .bio {
     flex-grow: 1;
+    border-right: 1px solid black;
   }
   .content {
-    flex-grow: 1;
+    flex-grow: 2;
   }
 }
 
