@@ -18,15 +18,7 @@
         </a>
       </div>
     </nav>
-    <div class="wrapper">
-      <!-- TODO: refactor both sections into own components -->
-      <section class="bio">
-        Bio Goes Here
-      </section>
-      <section class="content">
-        <router-view/>
-      </section>
-    </div>
+    <router-view/>
   </div>
 </template>
 
@@ -44,19 +36,6 @@ export default { }
   color: #2c3e50;
   display: flex;
   height: 100%;
-}
-.bio {
-  flex-grow: 1;
-  overflow-y: scroll;
-  border: 1px solid black;
-  border-top: none;
-  border-bottom: none;
-}
-.content {
-  flex-grow: 1;
-}
-.bio, .content {
-  padding: 2.5rem 1.25rem;
 }
 
 nav {
@@ -117,21 +96,6 @@ nav {
   }
 }
 
-@include tablet-only {
-  .wrapper {
-    border: 1px solid cyan;
-    display: flex;
-    .bio {
-      border: 1px solid red;
-      flex-grow: 1;
-      flex-basis: 50%;
-    }
-    .content {
-      flex-grow: 1;
-    }
-  }
-}
-
 @include desktop {
   nav {
     position: relative;
@@ -142,10 +106,6 @@ nav {
       display: block;
       transform: rotate(270deg);
     }
-  }
-  .wrapper {
-    flex-grow: 1;
-    display: flex;
   }
 }
 </style>
