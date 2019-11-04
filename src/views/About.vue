@@ -18,15 +18,11 @@ export default { }
 @import '../../node_modules/bulma/sass/utilities/mixins.sass';
 .base {
   display: flex;
-  border: 1px solid red;
   flex-grow: 1;
 }
 .bio {
   flex-grow: 1;
   overflow-y: scroll;
-  border: 1px solid black;
-  border-top: none;
-  border-bottom: none;
 }
 .content {
   flex-grow: 1;
@@ -39,16 +35,31 @@ export default { }
   .base {
     flex-direction: column;
   }
+  .bio {
+    border-right: 1px solid black;
+  }
 }
 
 @include tablet-only {
+  .base {
+    flex-direction: row;
+  }
   .bio {
-    border: 1px solid red;
     flex-grow: 1;
-    flex-basis: 50%;
   }
   .content {
     flex-grow: 1;
+  }
+}
+
+@include desktop {
+  .content {
+    flex-grow: 2;
+  }
+  .bio {
+    border: 1px solid black;
+    border-top: none;
+    border-bottom: none;
   }
 }
 </style>
