@@ -18,10 +18,7 @@
         </a>
       </div>
     </nav>
-    <div class="wrapper">
-      <!-- TODO: refactor both sections into own components -->
-      <router-view/>
-    </div>
+    <router-view/>
   </div>
 </template>
 
