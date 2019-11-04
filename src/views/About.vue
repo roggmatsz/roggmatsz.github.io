@@ -3,6 +3,10 @@
     <section class="bio">
       Bio Goes Here
       <br />
+      <img src="https://pbs.twimg.com/profile_images/1188630601315864576/mgUnBRaI_400x400.jpg" />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
     </section>
     <section class="content">
       Content Goes Here
@@ -23,6 +27,7 @@ export default { }
 .bio {
   overflow-y: scroll;
   flex-grow: 1;
+  flex-basis: min-content;
 }
 .content {
   flex-grow: 1;
