@@ -96,13 +96,6 @@ nav {
   }
 }
 
-@include tablet-only {
-  .wrapper {
-    border: 1px solid cyan;
-    display: flex;
-  }
-}
-
 @include desktop {
   nav {
     position: relative;
@@ -113,10 +106,6 @@ nav {
       display: block;
       transform: rotate(270deg);
     }
-  }
-  .wrapper {
-    flex-grow: 1;
-    display: flex;
   }
 }
 </style>
