@@ -77,8 +77,8 @@ nav {
       margin-bottom: 1.25rem;
     }
     img {
-      width: 2.25rem;
-      height: 2.25rem;
+      width: 2rem;
+      height: 2rem;
     }
     a:last-child {
       margin-bottom: 0;
@@ -106,8 +106,8 @@ nav {
         margin-bottom: 0;
         padding: 1.25rem;
         img {
-          width: 2rem;
-          height: 2rem;
+          width: 1.8rem;
+          height: 1.8rem;
         }
       }
     }
@@ -124,9 +124,10 @@ nav {
     .bio {
       border: 1px solid red;
       flex-grow: 1;
+      flex-basis: 50%;
     }
     .content {
-      flex-grow: 2;
+      flex-grow: 1;
     }
   }
 }
