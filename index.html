@@ -19,28 +19,38 @@
             width: 100%;
             text-align: center;
         }
-        img {
+        img[title="picture"] {
             margin-top: 20px;
             height: 40vh;
         }
         div {
-            text-align: center;
+            margin-top: 20px;
         }
         a {
-            color: black;
+            text-decoration: none;
+            margin-right: 40px;
         }
-        a:active {
-            color: black;
+        a:last-of-type {
+            margin-right: 0;
+        }
+        img[title="logo"] {
+            height: 50px;
         }
         
     </style>
     <body>
-        <img src="construction.png" />
+        <img title="picture" src="construction.png" />
         <h1>UNDER CONSTRUCTION</h1>
         <div>
-            <a href="https://linkedin.com/in/roggmatz"><h2>LinkedIn</h2></a>
-            <a href="https://twitter.com/roggmatz"><h2>Twitter</h2></a>
-            <a href="https://github.com/roggmatsz"><h2>GitHub</h2></a>
+            <a href="https://linkedin.com/in/roggmatz">
+                <img title="logo" src="linkedin.png" />
+            </a>
+            <a href="https://twitter.com/roggmatz">
+                <img title="logo" src="twitter.svg" />
+            </a>
+            <a href="https://github.com/roggmatsz">
+                <img title="logo" src="github.svg" />
+            </a>
         </div>
     </body>
 </html>
