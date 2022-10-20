@@ -6,6 +6,10 @@
         <title>Roggmatz.com - The website of Rogger Matamoros</title>
     </head>
     <style>
+        :root {
+            --color-foreground: #FFF;
+            --color-background: #E04250;
+        }
         body {
             display: flex;
             flex-direction: column;
@@ -14,9 +18,24 @@
             font-family: sans-serif;
             margin: 0;
         }
+        div.content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        svg {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -10;
+        }
         h1 {
-            background-color: black;
-            color: white;
+            background-color: var(--color-background);
+            color: var(--color-foreground);
             padding: 25px 15px 20px 15px;
             width: 100%;
             text-align: center;
@@ -38,24 +57,32 @@
         }
         img[title="logo"] {
             height: 50px;
+            filter: invert(100%);
+            color: var(--color-foreground);
         }
-        
     </style>
     <body>
-        <img title="picture" src="construction.png" />
-        <h1>UNDER CONSTRUCTION</h1>
-        <div>
-            <a href="https://linkedin.com/in/roggmatz">
-                <img title="logo" src="linkedin.png" />
-            </a>
-            <a href="https://twitter.com/roggmatz">
-                <img title="logo" src="twitter.svg" />
-            </a>
-            <a href="https://github.com/roggmatsz">
-                <img title="logo" src="github.svg" />
-            </a>
+        <div class="content">
+            <img title="picture" src="construction.png" />
+            <h1>
+                UNDER CONSTRUCTION
+                <div>
+                    <a href="https://linkedin.com/in/roggmatz">
+                        <img title="logo" src="linkedin.png" />
+                    </a>
+                    <a href="https://twitter.com/roggmatz">
+                        <img title="logo" src="twitter.svg" />
+                    </a>
+                    <a href="https://github.com/roggmatsz">
+                        <img title="logo" src="github.svg" />
+                    </a>
+                </div>
+            </h1>
+            
         </div>
     </body>
+
+    <script type="module" src="./generative-texture.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84991048-1"></script>
