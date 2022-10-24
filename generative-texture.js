@@ -10,12 +10,12 @@ const backgroundColor = getComputedStyle(document.getElementsByTagName('body')[0
 const svg = SVG().viewbox(0, 0, width, height).addTo('body')
     .attr('preserveAspectRatio', 'xMidYMid slice');
 
-svg.rect(width, height).fill('#E04250');
+svg.rect(width, height).fill(backgroundColor);
 
 const baseShape = svg.circle(width)
     .cx(width / 2)
     .cy(height / 2)
-    .fill('#fff');
+    .fill(foregroundColor);
 
 // Get the base shape's bounding box
 const bounds = baseShape.node.getBBox();
