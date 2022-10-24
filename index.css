@@ -1,6 +1,6 @@
 :root {
-    --color-foreground: #FFF;
-    --color-background: #E04250;
+    --color-foreground: #d3d3f8;
+    --color-background: #4242e0;
 }
 html, body {
     height: 100vh;
