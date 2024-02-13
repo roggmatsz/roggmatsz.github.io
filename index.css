@@ -21,7 +21,7 @@ div.content {
     justify-content: center;
     align-items: center;
 }
-svg {
+svg.background {
     width: 100vw;
     height: 100vh;
     position: fixed;
