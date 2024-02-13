@@ -8,7 +8,8 @@ const foregroundColor = getComputedStyle(document.getElementsByTagName('body')[0
 const backgroundColor = getComputedStyle(document.getElementsByTagName('body')[0]).getPropertyValue('--color-background');
 
 const svg = SVG().viewbox(0, 0, width, height).addTo('body')
-    .attr('preserveAspectRatio', 'xMidYMid slice');
+    .attr('preserveAspectRatio', 'xMidYMid slice')
+    .attr('class', 'background');
 
 svg.rect(width, height).fill(backgroundColor);
 
