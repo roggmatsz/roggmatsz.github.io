@@ -62,5 +62,3 @@ for (let i = 0; i < numLines; i++) {
     color: random([ foregroundColor, backgroundColor ])
   });
 }
-
-lineGroup.maskWith(baseShape);
