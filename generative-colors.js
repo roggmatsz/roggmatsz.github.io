@@ -8,9 +8,9 @@ do {
     accentColor = hslToRgb(hsl);
 } while (!ensureContrast(backgroundColor, foregroundColor) || !ensureContrast(foregroundColor, accentColor));
 
-document.documentElement.style.setProperty('--background-color', backgroundColor);
-document.documentElement.style.setProperty('--foreground-color', foregroundColor);
-document.documentElement.style.setProperty('--accent-color', accentColor);
+document.documentElement.style.setProperty('--color-background-color', backgroundColor);
+document.documentElement.style.setProperty('--color-foreground-color', foregroundColor);
+document.documentElement.style.setProperty('--color-accent-color', accentColor);
 
 function getRandomColor() {
     const red = Math.floor(Math.random() * 256);
