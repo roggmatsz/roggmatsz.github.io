@@ -1,6 +1,7 @@
 :root {
     --color-foreground: #d3d3f8;
     --color-background: #4242e0;
+    --color-accent: #000;
 }
 html, body {
     height: 100vh;
@@ -54,7 +55,7 @@ a:last-of-type {
 img.logo {
     height: 50px;
     filter: invert(100%);
-    color: var(--color-foreground);
+    color: var(--color-accent);
 }
 
 @media only screen and (max-width: 400px)  {
