@@ -11,6 +11,8 @@ do {
 document.documentElement.style.setProperty('--color-background', backgroundColor);
 document.documentElement.style.setProperty('--color-foreground', foregroundColor);
 document.documentElement.style.setProperty('--color-accent', accentColor);
+document.querySelector('meta[name="theme-color"]').setAttribute('content', foregroundColor);
+
 
 function getRandomColor() {
     const red = Math.floor(Math.random() * 256);
