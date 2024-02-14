@@ -54,8 +54,13 @@ a:last-of-type {
 }
 img.logo {
     height: 50px;
-    filter: invert(100%);
-    color: var(--color-accent);
+    fill: var(--color-foreground);
+}
+.site-links svg {
+    height: 50px;
+}
+svg path.logo {
+    fill: var(--color-foreground);
 }
 
 @media only screen and (max-width: 400px)  {
