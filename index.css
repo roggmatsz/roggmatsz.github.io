@@ -1,6 +1,7 @@
 :root {
     --color-foreground: #d3d3f8;
     --color-background: #4242e0;
+    --color-accent: #000;
 }
 html, body {
     height: 100vh;
@@ -20,7 +21,7 @@ div.content {
     justify-content: center;
     align-items: center;
 }
-svg {
+svg.background {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -53,8 +54,13 @@ a:last-of-type {
 }
 img.logo {
     height: 50px;
-    filter: invert(100%);
-    color: var(--color-foreground);
+    fill: var(--color-foreground);
+}
+.site-links svg {
+    height: 50px;
+}
+svg path.logo {
+    fill: var(--color-foreground);
 }
 
 @media only screen and (max-width: 400px)  {
