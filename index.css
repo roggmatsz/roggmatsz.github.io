@@ -5,8 +5,6 @@
 }
 html, body {
     height: 100vh;
-    color: var(--color-foreground);
-    background-color: var(--color-background);
 }
 body {
     display: flex;
@@ -22,6 +20,15 @@ main.content {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+footer {
+    box-sizing: border-box;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: bold;
 }
 svg.background {
     width: 100vw;
