@@ -2,7 +2,7 @@ name: Update Version Number
 
 on:
     push:
-        branches: [ master ]
+        branches: [ staging ]
 
 jobs:
     update_version:
