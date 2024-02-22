@@ -10,7 +10,7 @@ def get_version_number():
     
     revision = subprocess.check_output(["git", "rev-list", "--count", "HEAD"]).decode('utf-8').strip()
 
-    minor = subprocess.check_output(["git", "rev-list", "--count", "--merges", "master"]).strip()
+    minor = subprocess.check_output(["git", "rev-list", "--count", "--merges", "staging"]).strip()
 
     return major, minor, revision
 
