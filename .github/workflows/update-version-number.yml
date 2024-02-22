@@ -24,4 +24,4 @@ jobs:
               echo "VERSION_MINOR=$minor" >> $GITHUB_ENV
           fi
       - name: Update version number
-        run: python rev_version_number.py "${{ github.repository }}" "${{ github.ref }}"
+        run: python .github/scripts/rev_version_number.py "${{ github.repository }}" "${{ github.ref }}"
