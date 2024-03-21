@@ -10,22 +10,22 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - name: Set version environment variables
-            run: echo "VERSION_MAJOR=${{ secrets.VERSION_MAJOR }}" >> $GITHUB_ENV
+              run: echo "VERSION_MAJOR=${{ secrets.VERSION_MAJOR }}" >> $GITHUB_ENV
             - name: Count merges and commits
-            run: |
+              run: |
                 minor=$(git rev-list --merges --count generate-version-numbers-with-gh-actions)
                 revision=$(git rev-list --count HEAD)
                 echo "MINOR=$minor" >> $GITHUB_ENV
                 echo "REVISION=$revision" >> $GITHUB_ENV
             - name: Generate version number
-            run: |
+              run: |
                 major=${{ env.VERSION_MAJOR }}
                 minor=${{ env.MINOR }}
                 revision=${{ env.REVISION }}
                 version="$major.$minor.$revision"
                 echo "VERSION=$version" >> $GITHUB_ENV
             - name: Set environment variables from $GITHUB_ENV
-            run: |
+              run: |
                 echo $(env | grep '^GITHUB_')
                 env | grep '^GITHUB_' >> $GITHUB_ENV
             # - name: Update footer version
