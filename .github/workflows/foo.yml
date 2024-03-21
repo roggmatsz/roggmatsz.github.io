@@ -2,7 +2,7 @@ name: Update Version and Commit on Merge
 
 on:
     push:
-        branches: [ staging ]
+        branches: [ generate-version-numbers-with-gh-actions ]
 
 jobs:
     update_version:
@@ -13,7 +13,7 @@ jobs:
             run: echo "VERSION_MAJOR=${{ secrets.VERSION_MAJOR }}" >> $GITHUB_ENV
             - name: Count merges and commits
             run: |
-                minor=$(git rev-list --merges --count staging)
+                minor=$(git rev-list --merges --count generate-version-numbers-with-gh-actions)
                 revision=$(git rev-list --count HEAD)
                 echo "MINOR=$minor" >> $GITHUB_ENV
                 echo "REVISION=$revision" >> $GITHUB_ENV
