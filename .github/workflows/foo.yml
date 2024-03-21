@@ -24,12 +24,16 @@ jobs:
                 revision=${{ env.REVISION }}
                 version="$major.$minor.$revision"
                 echo "VERSION=$version" >> $GITHUB_ENV
-            - name: Update footer version
-            run: python write_version_number.py "${{ github.sha }}"
-            - name: Add and commit changes
+            - name: Set environment variables from $GITHUB_ENV
             run: |
-                git config user.name 'GitHub Actions'
-                git config user.email 'github-actions[bot]@users.noreply.github.com'
-                git add index.html
-                git commit -m "Update footer version to $VERSION"
-                git push origin staging 
+                echo $(env | grep '^GITHUB_')
+                env | grep '^GITHUB_' >> $GITHUB_ENV
+            # - name: Update footer version
+            # run: python write_version_number.py "${{ github.sha }}"
+            # - name: Add and commit changes
+            # run: |
+            #     git config user.name 'GitHub Actions'
+            #     git config user.email 'github-actions[bot]@users.noreply.github.com'
+            #     git add index.html
+            #     git commit -m "Update footer version to $VERSION"
+            #     git push origin staging 
