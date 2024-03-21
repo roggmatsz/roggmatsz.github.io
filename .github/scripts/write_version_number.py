@@ -1,18 +1,5 @@
-import subprocess
 import sys
-import os
 from bs4 import BeautifulSoup
-
-# def get_version_number(commit_sha):
-#     major = os.environ.get("VERSION_MAJOR", "unset")
-    
-#     if major == "unset":
-#         raise ValueError("Missing VERSION_MAJOR environment variable")
-    
-#     minor = subprocess.check_output(['git', 'rev-list', '--merges', '--count', 'staging']).decode('utf-8').strip()
-#     revision = subprocess.check_output(["git", "rev-list", "--count", commit_sha]).decode("utf-8").strip()
-
-#     return f'{major}.{minor}.{revision}'
 
 def insert_revision_number(version_number):
     filepath = 'index.html'
