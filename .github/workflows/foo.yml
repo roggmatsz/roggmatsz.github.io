@@ -14,7 +14,7 @@ jobs:
             - name: Count merges and commits
               run: |
                 minor=$(git rev-list --merges --count generate-version-numbers-with-gh-actions)
-                revision=$(git rev-list --count HEAD)
+                revision=$(git rev-list --count generate-version-numbers-with-gh-actions)
                 echo "MINOR=$minor" >> $GITHUB_ENV
                 echo "REVISION=$revision" >> $GITHUB_ENV
             - name: Generate version number
@@ -26,7 +26,7 @@ jobs:
                 echo "VERSION=$version" >> $GITHUB_ENV
             - name: Set environment variables from $GITHUB_ENV
               run: |
-                echo $(env | grep '^GITHUB_')
+                echo $(env)
                 env | grep '^GITHUB_' >> $GITHUB_ENV
             # - name: Update footer version
             # run: python write_version_number.py "${{ github.sha }}"
