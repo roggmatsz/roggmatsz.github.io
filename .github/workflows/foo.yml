@@ -25,6 +25,9 @@ jobs:
                 version="$major.$minor.$revision"
                 echo "VERSION=$version" >> $GITHUB_ENV
 
+            - name: Install Python dependencies
+              run: |
+                pip install beautifulsoup4
             - name: Update footer version
               run: python .github/scripts/write_version_number.py "${{ env.VERSION }}"
             - name: Add and commit changes
