@@ -2,13 +2,13 @@ name: Update Version and Commit on Merge
 
 on:
     push:
-        branches: [ staging ]
+        branches: [ master ]
 
 jobs:
     update_version:
         runs-on: ubuntu-latest
         env:
-            BRANCH: staging
+            BRANCH: master
         steps:
             - uses: actions/checkout@v3
               with:
