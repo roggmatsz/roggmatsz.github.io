@@ -1,15 +1,14 @@
 name: Update Version and Commit on Merge
 
-env:
-    BRANCH: generate-version-numbers-with-gh-actions
-
 on:
     push:
-        branches: [ BRANCH ]
+        branches: [ generate-version-numbers-with-gh-actions ]
 
 jobs:
     update_version:
         runs-on: ubuntu-latest
+        env:
+            BRANCH: generate-version-numbers-with-gh-actions    
         steps:
             - uses: actions/checkout@v3
             - name: Count merges and commits
