@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import os
 from bs4 import BeautifulSoup
 
 def get_version_number(commit_sha):
@@ -19,17 +20,19 @@ def insert_revision_number(version_number):
     with open(filepath, 'r') as file:
         soup = BeautifulSoup(file, 'html.parser')
         footer = soup.find('footer')
-
-        if footer:
-            version_element = soup.new_tag('p')
-            version_element.string = f'Version: {version_number}'
-            footer.append(version_element)
-
-            with open(filepath, 'w') as file:
-                file.write(str(soup))
+        if not footer:
+            print('No footer was found in index.html')
+            return
         
-        else:
-            print('Footer not found in index.html')
+        version_element = footer.find('span', class_='version-number')
+        print(version_element)
+        if not version_element:
+            print('No version element was found in index.html')
+            return
+        
+        version_element.string = f'Version {version_number}'
+        with open(filepath, 'w') as file:
+            file.write(str(soup))
     
 if __name__ == '__main__':
     commit_sha = sys.argv[1]
