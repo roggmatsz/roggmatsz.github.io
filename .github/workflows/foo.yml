@@ -1,20 +1,21 @@
 name: Update Version and Commit on Merge
 
+env:
+    BRANCH: generate-version-numbers-with-gh-actions
+
 on:
     push:
-        branches: [ generate-version-numbers-with-gh-actions ]
+        branches: [ BRANCH ]
 
 jobs:
     update_version:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - name: Retrieve Major version
-              run: echo "VERSION_MAJOR=${{ vars.VERSION_MAJOR }}"
             - name: Count merges and commits
               run: |
-                minor=$(git rev-list --merges --count generate-version-numbers-with-gh-actions)
-                revision=$(git rev-list --count generate-version-numbers-with-gh-actions)
+                minor=$(git rev-list --merges --count $BRANCH)
+                revision=$(git rev-list --count $BRANCH ^master ^staging)
                 echo "MINOR=$minor" >> $GITHUB_ENV
                 echo "REVISION=$revision" >> $GITHUB_ENV
             - name: Generate version number
@@ -24,10 +25,7 @@ jobs:
                 revision=${{ env.REVISION }}
                 version="$major.$minor.$revision"
                 echo "VERSION=$version" >> $GITHUB_ENV
-            - name: Set environment variables from $GITHUB_ENV
-              run: |
-                echo $(env)
-                env | grep '^GITHUB_' >> $GITHUB_ENV
+
             # - name: Update footer version
             # run: python write_version_number.py "${{ github.sha }}"
             # - name: Add and commit changes
