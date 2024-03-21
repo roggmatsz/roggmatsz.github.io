@@ -9,8 +9,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - name: Set version environment variables
-              run: echo "VERSION_MAJOR=${{ secrets.VERSION_MAJOR }}" >> $GITHUB_ENV
+            - name: Retrieve Major version
+              run: echo "VERSION_MAJOR=${{ vars.VERSION_MAJOR }}"
             - name: Count merges and commits
               run: |
                 minor=$(git rev-list --merges --count generate-version-numbers-with-gh-actions)
@@ -19,7 +19,7 @@ jobs:
                 echo "REVISION=$revision" >> $GITHUB_ENV
             - name: Generate version number
               run: |
-                major=${{ env.VERSION_MAJOR }}
+                major=${{ vars.VERSION_MAJOR }}
                 minor=${{ env.MINOR }}
                 revision=${{ env.REVISION }}
                 version="$major.$minor.$revision"
