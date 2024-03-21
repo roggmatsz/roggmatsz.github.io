@@ -1,4 +1,5 @@
 import subprocess
+import sys
 from bs4 import BeautifulSoup
 
 def get_version_number(commit_sha):
