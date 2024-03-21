@@ -32,8 +32,8 @@ def insert_revision_number(version_number):
         
         version_element.string = f'Version {version_number}'
         with open(filepath, 'w') as file:
-            file.write(str(soup))
-            print(str(soup))
+            file.write(str(soup.prettify()))
+            print(str(soup.prettify()))
     
 if __name__ == '__main__':
     version_number = sys.argv[1]
