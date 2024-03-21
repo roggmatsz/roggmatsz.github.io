@@ -14,7 +14,7 @@ jobs:
             - name: Count merges and commits
               run: |
                 minor=$(git rev-list --merges --count $BRANCH)
-                revision=$(git rev-list --count $BRANCH ^master ^staging)
+                revision=$(git rev-list --count $BRANCH)
                 echo "MINOR=$minor" >> $GITHUB_ENV
                 echo "REVISION=$revision" >> $GITHUB_ENV
             - name: Generate version number
