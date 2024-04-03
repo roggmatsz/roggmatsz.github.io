@@ -61,10 +61,6 @@ a {
 a:last-of-type {
     margin-right: 0;
 }
-img.logo {
-    height: 50px;
-    fill: var(--color-foreground);
-}
 .site-links svg {
     height: 50px;
 }
