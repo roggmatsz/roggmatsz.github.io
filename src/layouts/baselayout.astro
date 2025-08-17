@@ -1,18 +1,18 @@
 ---
+import '../styles/index.css';
 const { title } = Astro.props;
 ---
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link href="src/styles/index.css" rel="stylesheet" />
         <link href="https://mstdn.social/@roggmatz" rel="me" />
         <meta content="#2c2cdd" name="theme-color" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta name="generator" content={Astro.generator} />
         <script is:inline src="/generative-colors.js"></script>
         <script is:inline defer="" src="./generative-texture.js" type="module"></script>
-        <title>{{title}} - The Website of Rogger Matamoros</title>
+        <title>{title} - The Website of Rogger Matamoros</title>
         <meta content="en-us" http-equiv="content-language" />
         <meta
             content="The future, centralized home or Rogger's online presence. Currently under construction, check again later!"
