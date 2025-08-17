@@ -1,30 +1,33 @@
 ---
 const googleAnalyticsID = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 const msClarityID = import.meta.env.PUBLIC_MICROSOFT_CLARITY_ID;
+
+console.log('GA:', googleAnalyticsID);
+console.log('Clarity:', msClarityID);
 ---
 { googleAnalyticsID && (
     <>
         <!-- Google Analytics -->
-        <script is:inline async src=`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsID}`></script>
-        <script is:inline type="text/javascript">
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsID}`}></script>
+        <script set:html={`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-            gtag('config', '{ googleAnalyticsID }');
-        </script>
+          gtag('config', '${googleAnalyticsID}', {'send_page_view': false});
+        `}></script>
     </>
 )}
 
 { msClarityID && (
     <>
         <!-- Microsoft Clarity -->
-        <script is:inline type="text/javascript">
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "{ msClarityID }");
-        </script>
+        <script is:inline set:html={`
+          (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?exclude=true";
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", '${msClarityID}');
+        `}></script>
     </>
 )}
