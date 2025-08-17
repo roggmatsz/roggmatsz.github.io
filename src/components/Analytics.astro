@@ -1,0 +1,30 @@
+---
+const googleAnalyticsID = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
+const msClarityID = import.meta.env.PUBLIC_MS_CLARITY_ID;
+---
+{ googleAnalyticsID && (
+    <>
+        <!-- Google Analytics -->
+        <script is:inline async src=`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsID}`></script>
+        <script is:inline type="text/javascript">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '{ googleAnalyticsID }');
+        </script>
+    </>
+)}
+
+{msClarityID && (
+    <>
+        <!-- Microsoft Clarity -->
+        <script is:inline type="text/javascript">
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?exclude=true";
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "{ msClarityID }");
+        </script>
+    </>
+)}
