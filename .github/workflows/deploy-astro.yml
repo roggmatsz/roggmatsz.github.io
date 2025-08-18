@@ -22,7 +22,6 @@ jobs:
           PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.PUBLIC_GOOGLE_ANALYTICS_ID }}
           PUBLIC_MICROSOFT_CLARITY_ID: ${{ vars.PUBLIC_MICROSOFT_CLARITY_ID }}
 
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
