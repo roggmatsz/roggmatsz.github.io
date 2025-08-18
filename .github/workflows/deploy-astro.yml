@@ -19,8 +19,8 @@ jobs:
       - name: Install, build, and upload site
         uses: withastro/action@v3
         env:
-          PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.PUBLIC_GOOGLE_ANALYTICS_ID }}
-          PUBLIC_MICROSOFT_CLARITY_ID: ${{ secrets.PUBLIC.MICROSOFT_CLARITY_ID }}
+          PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.PUBLIC_GOOGLE_ANALYTICS_ID }}
+          PUBLIC_MICROSOFT_CLARITY_ID: ${{ vars.PUBLIC.MICROSOFT_CLARITY_ID }}
 
   deploy:
     needs: build
