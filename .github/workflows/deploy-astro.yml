@@ -2,7 +2,9 @@ name: Deploy Astro to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
+      - staging
   workflow_dispatch:
 
 permissions:
@@ -13,16 +15,27 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.PUBLIC_GOOGLE_ANALYTICS_ID }}
+      PUBLIC_MICROSOFT_CLARITY_ID: ${{ vars.PUBLIC_MICROSOFT_CLARITY_ID }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Install, build, and upload site
-        uses: withastro/action@v3
-        env:
-          PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.PUBLIC_GOOGLE_ANALYTICS_ID }}
-          PUBLIC_MICROSOFT_CLARITY_ID: ${{ vars.PUBLIC_MICROSOFT_CLARITY_ID }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+      - name: Install dependencies
+        run: npm install
+      - name: Build Astro site
+        run: npm run build
+      - name: Upload build artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
   deploy:
+    if: github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
     environment:
