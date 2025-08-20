@@ -2,7 +2,9 @@ name: Deploy Astro to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
+      - staging
   workflow_dispatch:
 
 permissions:
@@ -33,6 +35,7 @@ jobs:
           path: ./dist
 
   deploy:
+    if: github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
     environment:
