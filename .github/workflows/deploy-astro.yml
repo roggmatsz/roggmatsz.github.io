@@ -4,6 +4,8 @@ on:
     branches:
       - master
       - staging
+      - feature/**
+
   workflow_dispatch:
 
 permissions:
@@ -35,9 +37,30 @@ jobs:
         with:
           path: ./dist
 
+  test-build-artifact:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifact
+        uses: actions/download-pages-artifact@v4
+        with:
+          name: github-pages
+      - name: Look for Google Analytics markup
+        run: |
+          if ! grep -q 'https://www.googletagmanager.com/gtag/js?id=${{ env.PUBLIC_GOOGLE_ANALYTICS_ID }}' ./dist/index.html; then
+            echo "Google Analytics markup not found"
+            exit 1
+          fi
+      - name: Look for Microsoft Clarity markup
+        run: |
+          if ! grep -q '(window, document, "clarity", "script", "${{env.PUBLIC_MICROSOFT_CLARITY_ID}}")' ./dist/index.html; then
+            echo "Microsoft Clarity markup not found"
+            exit 1
+          fi
+
   deploy:
     if: github.ref == 'refs/heads/master'
-    needs: build
+    needs: [build, test-build-artifact]
     runs-on: ubuntu-latest
     environment:
       name: github-pages
