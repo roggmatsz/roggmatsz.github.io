@@ -5,6 +5,7 @@ on:
       - master
       - staging
       - feature/**
+
   workflow_dispatch:
 
 permissions:
@@ -14,6 +15,8 @@ permissions:
 
 jobs:
   build:
+    environment:
+      name: github-pages
     runs-on: ubuntu-latest
     env:
       PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.PUBLIC_GOOGLE_ANALYTICS_ID }}
