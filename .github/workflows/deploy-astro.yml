@@ -47,13 +47,13 @@ jobs:
           name: github-pages
       - name: Look for Google Analytics markup
         run: |
-          if ! grep -q 'https://www.googletagmanager.com/gtag/js?id=${{ env.PUBLIC_GOOGLE_ANALYTICS_ID }}' ./dist/index.html; then
+          if ! grep -q "https://www.googletagmanager.com/gtag/js?id=$PUBLIC_GOOGLE_ANALYTICS_ID" ./dist/index.html; then
             echo "Google Analytics markup not found"
             exit 1
           fi
       - name: Look for Microsoft Clarity markup
         run: |
-          if ! grep -q '(window, document, "clarity", "script", "${{env.PUBLIC_MICROSOFT_CLARITY_ID}}")' ./dist/index.html; then
+          if ! grep -q '(window, document, "clarity", "script", "$PUBLIC_MICROSOFT_CLARITY_ID")' ./dist/index.html; then
             echo "Microsoft Clarity markup not found"
             exit 1
           fi
