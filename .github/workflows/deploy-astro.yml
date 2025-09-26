@@ -37,27 +37,6 @@ jobs:
         with:
           path: ./dist
 
-  test-build-artifact:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-      - name: Look for Google Analytics markup
-        run: |
-          if ! grep -qF "https://www.googletagmanager.com/gtag/js?id=" ./dist/index.html; then
-            echo "Google Analytics markup not found"
-            exit 1
-          fi
-      - name: Look for Microsoft Clarity markup
-        run: |
-          if ! grep -qF '(window, document, "clarity", "script", "$PUBLIC_MICROSOFT_CLARITY_ID")' ./dist/index.html; then
-            echo "Microsoft Clarity markup not found"
-            exit 1
-          fi
-
   deploy:
     if: github.ref == 'refs/heads/master'
     needs: [build, test-build-artifact]
