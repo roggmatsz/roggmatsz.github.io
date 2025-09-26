@@ -7,6 +7,10 @@ on:
       - feature/**
   workflow_dispatch:
 
+env:
+  PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.PUBLIC_GOOGLE_ANALYTICS_ID }}
+  PUBLIC_MICROSOFT_CLARITY_ID: ${{ vars.PUBLIC_MICROSOFT_CLARITY_ID }}
+
 permissions:
   contents: read
   pages: write
@@ -17,9 +21,6 @@ jobs:
     environment:
       name: github-pages
     runs-on: ubuntu-latest
-    env:
-      PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.PUBLIC_GOOGLE_ANALYTICS_ID }}
-      PUBLIC_MICROSOFT_CLARITY_ID: ${{ vars.PUBLIC_MICROSOFT_CLARITY_ID }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
