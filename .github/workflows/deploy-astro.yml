@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download build artifact
-        uses: actions/download-pages-artifact@v4
+        uses: actions/download-artifact@v4
         with:
           name: github-pages
       - name: Look for Google Analytics markup
