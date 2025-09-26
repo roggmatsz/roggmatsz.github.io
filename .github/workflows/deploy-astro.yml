@@ -39,7 +39,7 @@ jobs:
 
   deploy:
     if: github.ref == 'refs/heads/master'
-    needs: [build, test-build-artifact]
+    needs: [build]
     runs-on: ubuntu-latest
     environment:
       name: github-pages
